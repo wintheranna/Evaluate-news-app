@@ -1,5 +1,7 @@
+// hide API credentials
 const dotenv = require('dotenv');
 dotenv.config();
+
 // Setup empty JS object to act as endpoint for all routes
 let projectData = {}
 
@@ -8,7 +10,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mockAPIResponse = require('./mockAPI.js')
-const aylien = require("aylien_textapi")
+const aylien = require('aylien_textapi')
 const textapi = new aylien({
   application_id: process.env.API_ID,
   application_key: process.env.API_KEY
@@ -27,8 +29,6 @@ app.use(bodyParser.urlencoded({extended: true}))
 // Initialize the main project folder
 app.use(express.static('./dist'))
 
-/*console.log(__dirname)*/
-
 // Initialize route
 app.get('/', function (req, res) {
     res.send('./dist/index.html');
@@ -42,7 +42,6 @@ app.listen(8081, function () {
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse);
-    console.log('mockAPI');
 });
 
 // Post route

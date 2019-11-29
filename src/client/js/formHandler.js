@@ -15,10 +15,10 @@ function handleSubmit(event) {
     fetch('http://localhost:8081/test')
     .then(res => {
         return res.json()
-      })
+    })
     .then(function(data) {
         document.getElementById('results').innerHTML = data.message
-    });
+    })
     }
 
 /* Function to POST data */
@@ -34,7 +34,6 @@ const postData = async (url='', data={}) => {
     console.log(response);
   } catch(error) {
       console.log('error', error);
-      alert("Invalid URL, try again!");
     }
 }
 
