@@ -4,7 +4,7 @@ function handleSubmit(event) {
     let name = document.getElementById('name').value;
     // check for valid URL
     Client.checkForUrl(name);
-    console.log("::: Form Submitted :::")
+    console.log(name)
     postData('/save', {
       name: name
     });
@@ -39,16 +39,16 @@ const postData = async (url='', data={}) => {
 
 /* Function to fetch data and update user interface */
 const updateUI = async () => {
-const request = await fetch('http://localhost:8081/api');
-try {
-  const allData = await request.json();
-    console.log(allData);
-    document.getElementById('results').innerHTML = '<br>Polarity: ' + allData.polarity + '<br>';
-    document.getElementById('results').innerHTML += '<br>Subjectivity: ' + allData.polarity_confidence + '<br>';
-    document.getElementById('results').innerHTML += '<br>Text: ' + allData.text + '<br>';
-} catch(error) {
-    console.log('error', error);
-  }
+  const request = await fetch('http://localhost:8081/api');
+  try {
+    const allData = await request.json();
+      console.log(allData);
+      document.getElementById('results').innerHTML = '<br>Polarity: ' + allData.polarity + '<br>';
+      document.getElementById('results').innerHTML += '<br>Subjectivity: ' + allData.polarity_confidence + '<br>';
+      document.getElementById('results').innerHTML += '<br>Text: ' + allData.text + '<br>';
+  } catch(error) {
+        console.log('error', error);
+    }
 }
 
 export { handleSubmit }

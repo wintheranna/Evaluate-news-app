@@ -6,11 +6,11 @@ Uses the URL of an article to evaluate it (polarity, polarity confidence).
 Authors
 Udacity - Html, Css, js
 Anna Winther -
-- Setting up Webpack
+- Set up Webpack
 - Sass styles
-- Adding Webpack Loaders and Plugins
-- Service workers
-- Using APIs and creating requests to external urls
+- Add Webpack Loaders and Plugins
+- Add Service workers
+- Using API and creating request to external url
 - Add urlchecker.js
 - Add formHandler.js
 - Add Jest test

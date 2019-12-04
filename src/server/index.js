@@ -41,7 +41,6 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse);
 });
@@ -61,7 +60,6 @@ app.get('/api', function(req, res) {
      mode: 'document'
 }, function(error, response) {
       if (error === null) {
-      console.log(response);
       res.send(response);
       }
     });
